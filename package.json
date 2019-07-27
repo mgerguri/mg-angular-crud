@@ -1,0 +1,18 @@
+{
+  "name": "angular-table",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Muharrem Gerguri",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.24.5",
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "underscore": "^1.9.1"
+  }
+}

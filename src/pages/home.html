@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="col-sm-4">
+        <h1>{{ vm.titleName }}</h1>
+    </div>
+    <div class="col-sm-4">
+        <button ng-click="vm.changeLanguage('en')" class="btn btn-primary" translate="BUTTON_LANG_EN">En</button>
+        <button ng-click="vm.changeLanguage('al')" class="btn btn-primary" translate="BUTTON_LANG_AL">Al</button>
+    </div>
+    <div class="col-sm-4 text-right" ui-sref="newcontact"><a href="">{{ 'NEW_CONTACT' | translate}}</a></div>
+</nav>
+
+<div class="row">
+    <div class="col-sm-12">
+        <h2 class="text-center">{{ 'LIST_TITLE' | translate}}</h2>
+    </div>
+
+    <div class="col-sm-3">
+        <p><input type="text" class="form-control" placeholder="Search" ng-model="query"></p>
+    </div>
+
+    <div class="col-sm-12">
+        <table class="table table-striped table-hover table-borderless">
+            <thead>
+                <tr>
+                    <th scope="col" ng-click="vm.sortBy('firstName')" style="cursor: pointer;">
+                        {{ 'FIRST_NAME' |  translate }}
+                        <span ng-show="vm.propertyName === 'firstName'" ng-class="{reverse: reverse}">
+                            <i class="fa fa-sort"></i>
+                        </span>
+                    </th>
+                    <th scope="col" ng-click="vm.sortBy('lastName')" style="cursor: pointer;">
+                        {{ 'LAST_NAME' |  translate }}
+                        <span ng-show="vm.propertyName === 'lastName'" ng-class="{reverse: reverse}">
+                            <i class="fa fa-sort"></i>
+                        </span>
+                    </th>
+                    <th scope="col" ng-click="vm.sortBy('birthDay')" style="cursor: pointer;">
+                        {{ 'BIRTH_DAY' |  translate }}
+                        <span ng-show="vm.propertyName === 'birthDay'" ng-class="{reverse: reverse}">
+                            <i class="fa fa-sort"></i>
+                        </span>
+                    </th>
+                    <th scope="col" ng-click="vm.sortBy('birthPlace')" style="cursor: pointer;">
+                        {{ 'BIRTH_PLACE' |  translate }}
+                        <span ng-show="vm.propertyName === 'birthPlace'" ng-class="{reverse: reverse}">
+                            <i class="fa fa-sort"></i>
+                        </span>
+                    </th>
+                    <th scope="col">{{ 'SEX' | translate }}</th>
+                    <th scope="col">{{ 'EDIT' |  translate }}</th>
+                    <th scope="col">{{ 'DELETE' |  translate }}</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="person in vm.array | filter: query | orderBy:vm.propertyName:vm.reverse">
+                    <td>{{ person.firstName }}</td>
+                    <td>{{ person.lastName }}</td>
+                    <td>{{ person.birthDay | date: 'dd MMM, yyyy' }}</td>
+                    <td>{{ person.birthPlace }}</td>
+                    <td>{{ person.sex }}</td>
+                    <td><i ng-click="vm.show(person)" class="far fa-edit"></i></td>
+                    <td><i ng-click="vm.remove(person)" class="fas fa-trash-alt" style="cursor: pointer;"></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

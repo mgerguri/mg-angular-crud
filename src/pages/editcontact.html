@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="col-sm-4">
+        <h1>{{ vm.title }}</h1>
+    </div>
+    <div class="col-sm-4 text-center">
+        <button ng-click="vm.changeLanguage('en')" class="btn btn-primary" translate="BUTTON_LANG_EN">En</button>
+        <button ng-click="vm.changeLanguage('al')" class="btn btn-primary" translate="BUTTON_LANG_AL">Al</button>
+    </div>
+<div class="text-right col-sm-4" ui-sref="home"><a href="">{{ 'HOME_PAGE' | translate }}</a></div>
+</nav>
+
+<div class="row">
+<div class="col-sm-12">
+    <h1 class="text-center">{{ 'EDIT_CONTACT' | translate }}</h1>
+</div>
+
+<form class="col-sm-6">
+    <div class="form-group row">
+        <label for="firstname" class="col-sm-4 col-form-label">{{ 'FIRST_NAME' | translate }}</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" ng-model="vm.person.firstName" id="firstname">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="lastname" class="col-sm-4 col-form-label">{{ 'LAST_NAME' | translate }}</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" ng-model="vm.person.lastName" id="lastname">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="birthday" class="col-sm-4 col-form-label">{{ 'BIRTH_DAY' | translate }}</label>
+        <div class="col-sm-8">
+            <input type="date" class="form-control" ng-model="vm.person.birthDay" id="date" name="date">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="birthplace" class="col-sm-4 col-form-label">{{ 'BIRTH_PLACE' | translate }}</label>
+        <div class="col-sm-8">
+            <select class="custom-select" ng-model="vm.person.birthPlace">
+                <option selected>Select your birthplace</option>
+                <option value="Prishtine">Prishtine</option>
+                <option value="Mitrovice">Mitrovice</option>
+                <option value="Vushtrri">Vushtrri</option>
+                <option value="Prizren">Prizren</option>
+                <option value="Gjilan">Gjilan</option>
+                <option value="Peje">Peje</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="sex" class="col-sm-5 col-form-label">{{ 'SEX' | translate }}</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" 
+                value="Male" ng-model="vm.person.sex">
+            <label class="form-check-label" for="inlineRadio1">{{ 'MALE' | translate}}</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" 
+                value="Female" ng-model="vm.person.sex">
+            <label class="form-check-label" for="inlineRadio2">{{ 'FEMALE' | translate }}</label>
+        </div>
+    </div>
+
+    <div class="form-group row col-sm-12">
+        <button class="btn btn-primary" ng-click="vm.save(vm.person)"
+            style="position: absolute; right: 0;">
+            {{ 'EDIT' | translate }}
+        </button>
+    </div>
+
+</form>
+
+</div>
+

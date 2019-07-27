@@ -1,0 +1,24 @@
+{
+  "name": "bower",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Muharrem Gerguri"
+  ],
+  "license": "ISC",
+  "homepage": "index.html",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.7.2",
+    "angular-ui-router": "ui-router#^1.0.18",
+    "bootstrap": "^4.1.1",
+    "angular-translate": "^2.18.1"
+  }
+}

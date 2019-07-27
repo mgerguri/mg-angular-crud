@@ -1,0 +1,16 @@
+{
+    "person":[
+        {
+            "name": "Muharrem",
+            "surname": "Gerguri",
+            "birthday": "10.09.1993",
+            "birthplace": "Vushtrri"
+        },
+        {
+            "name": "Mergim",
+            "surname": "Bajrami",
+            "birthday": "10.05.1992",
+            "birthplace": "Prishtine"
+        }
+    ]        
+}
